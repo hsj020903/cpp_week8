@@ -10,8 +10,9 @@ private:
 
 public:
   Address(int address) : address_(address) {}
+  //주소를 문자열로 리턴
   std::string toString() const { return std::to_string(address_); }
   bool operator==(const Address &rhs) const { return address_ == rhs.address_; }
+  
 };
-
 #endif

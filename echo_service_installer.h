@@ -11,6 +11,7 @@ private:
   short listenPort_;
 
 public:
+
   EchoServiceInstaller(short listenPort) : listenPort_(listenPort) {}
 
   // 호스트에 EchoService를 설치한다.

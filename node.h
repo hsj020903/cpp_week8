@@ -6,15 +6,28 @@
 #include <vector>
 
 class Node {
-  friend class LinkInstaller;
+    friend class LinkInstaller;
 
-private:
-  int id_;
-  static int nextId_;
+  private:
+    // 자기 아이디
+    int id_;
 
-public:
-  Node() : id_(nextId_++) {}
-  int id() const { return id_; }
+    // 다음아이디
+    static int nextId_;
+
+  protected:
+    // 연결된 링크
+    Link *link_;
+
+  public:
+    Node() : id_(nextId_++) {}
+    ~Node();
+    // 자신의 아이디 리턴
+    int id() const { return id_; }
+
+    void addLink(Link *link);
+    virtual void send(Packet *pk)=0;
+    virtual void receive(Packet *pk)=0;
 };
 
 #endif
