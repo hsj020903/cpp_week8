@@ -15,14 +15,13 @@ class MessageService : public Service {
     Address destAddress_;
     // 목적지 포트
     short destPort_;
+
     MessageService(Host *host, short port, Address destAddress, short destPort)
         : Service(host, port), destAddress_(destAddress), destPort_(destPort) {}
 
   public:
-
-        // 메시지를 전송한다
-        void
-        send(std::string message);
+    // 메시지를 전송한다
+    void send(std::string message);
     // 패킷처리
     void dataProcessing(Packet *pk);
 };

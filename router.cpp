@@ -1,8 +1,9 @@
 #include "router.h"
 
 Router::~Router() { routingTable_.clear(); }
+
 void Router::send(Packet *pk) {
-    for (int i = 0; i < routingTable_.size(); i++) {
+    for (size_t i = 0; i < routingTable_.size(); i++) {
         if (routingTable_[i].destination == pk->destAddress()) {
             std::cout << "Router #" << this->id()
                       << ": forwarding packet (from: "
@@ -20,3 +21,4 @@ void Router::send(Packet *pk) {
 }
 
 void Router::receive(Packet *pk) { send(pk); }
+

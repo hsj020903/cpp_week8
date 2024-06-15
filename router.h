@@ -18,10 +18,11 @@ class Router : public Node {
   public:
     ~Router();
     // 링크를 랜덤으로 하나 선택하여 패킷을 전송한다.
-    void send(Packet *pk);
+    virtual void send(Packet *pk) override;
 
     // 패킹 처리
-    void receive(Packet *pk);
+    virtual void receive(Packet *pk) override;
+
 };
 
 #endif

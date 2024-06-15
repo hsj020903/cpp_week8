@@ -5,7 +5,8 @@
 #include "packet.h"
 #include "service.h"
 #include <vector>
-
+#include<cstdlib>
+#include<ctime>
 class Host : public Node {
     friend class ServiceInstaller;
 
@@ -15,7 +16,6 @@ class Host : public Node {
 
     // 설치된 서비스 목록
     std::vector<Service *> services_;
-
   public:
     // 주소 리턴
     Address address() { return address_; }
@@ -30,13 +30,15 @@ class Host : public Node {
     void initialize();
 
     // 링크를 랜덤으로 하나 선택하여 패킷을 전송한다.
-    void send(Packet *packet);
+    virtual void send(Packet *packet) override;
 
     // 받은 패킷을 처리한다
-    void receive(Packet *pk);
+    virtual void receive(Packet *pk) override;
 
     // 서비스목록에 추가
     void addService(Service *service);
+
+    int serviceSize();
 };
 
 #endif

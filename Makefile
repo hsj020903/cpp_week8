@@ -23,7 +23,7 @@ echo_service_installer.o: echo_service_installer.cpp
 	$(CC) $(CFLAGS)  -c echo_service_installer.cpp
 
 host.o: host.cpp
-	$(CC) $(CFLAGS) -c host.cpp -o host.o
+	$(CC) $(CFLAGS) -c host.cpp
 
 link_installer.o: link_installer.cpp
 	$(CC) $(CFLAGS) -c link_installer.cpp

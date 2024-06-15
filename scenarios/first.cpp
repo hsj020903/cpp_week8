@@ -29,7 +29,7 @@ int main() {
     for (int i = 0; i < 4; i++) {
         routers.push_back(new ManualRouter());
     }
-
+    
     // 라우터와 호스트 간에 링크로 연결한다.
     LinkInstaller linkInstaller;
     std::vector<Link *> links;
@@ -70,7 +70,7 @@ int main() {
     // ------------ //
     // 시뮬레이션 수행 //
     // ------------ //
-
+    
     // 각 호스트를 초기화한다.
     echoServer->initialize();
     messageClient->initialize();

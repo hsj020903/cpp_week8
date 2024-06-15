@@ -16,18 +16,20 @@ class Node {
     static int nextId_;
 
   protected:
-    // 연결된 링크
-    Link *link_;
+    Link* links_;
 
   public:
     Node() : id_(nextId_++) {}
     ~Node();
     // 자신의 아이디 리턴
     int id() const { return id_; }
-
     void addLink(Link *link);
-    virtual void send(Packet *pk)=0;
-    virtual void receive(Packet *pk)=0;
+
+    //데이터 보내기
+     virtual void send(Packet *pk) = 0;
+
+     //받은 데이터 처리
+    virtual void receive(Packet *pk) = 0;
 };
 
 #endif

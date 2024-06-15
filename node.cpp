@@ -2,10 +2,8 @@
 
 int Node::nextId_ = 0;
 
-Node::~Node(){
-    delete link_;
+Node::~Node(){}
+void Node::addLink(Link *link){
+    links_ = link;
 }
 
-void Node::addLink(Link *link){
-    link_ = link;
-}

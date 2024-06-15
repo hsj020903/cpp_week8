@@ -52,7 +52,6 @@ int main() {
   LinkInstaller linkInstaller;
   std::vector<Link *> clientLinks;
   std::vector<Link *> serverLinks;
-
   for (int i = 0; i < COUNT; i++) {
     clientLinks.push_back(linkInstaller.install(router, clients[i]));
     serverLinks.push_back(linkInstaller.install(router, servers[i]));

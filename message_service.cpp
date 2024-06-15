@@ -1,5 +1,7 @@
 #include "message_service.h"
 
+#define ECHO_PORT 3000
+
 void MessageService::send(std::string message) {
     Packet *packet =
         new Packet(host_->address(), destAddress_, port_, destPort_, message);
